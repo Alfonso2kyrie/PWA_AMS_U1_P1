@@ -1,4 +1,3 @@
-//console.log('SW: Hola mundo');
 self.addEventListener('install', (event) => {
     console.log("SW: instalado");
 });
@@ -11,7 +10,7 @@ self.addEventListener('fetch', (event) => {
     console.log(event.request.url);
     if (event.request.url.includes('.jpg')) {
 
-        let newResp = fetch('/images/cheemsFail.jpg');
+        let newResp = fetch('./images/cheemsFail.jpg');
         console.log("Es una imagen");
         event.respondWith(newResp);
     }
@@ -21,8 +20,8 @@ self.addEventListener('fetch', (event) => {
 
         let newResponse = new Response(`
         body{
-            background-color: blue !important;
-            color:  white !important;
+            background-color: darkblue !important;
+            color:  black !important;
         }`,
             {
                 headers: {
